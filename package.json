@@ -1,0 +1,76 @@
+{
+  "name": "maintenance-antd",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@ant-design/icons": "^5.0.1",
+    "@nhost/nhost-js": "^3.0.1",
+    "@nhost/react": "^2.1.1",
+    "@refinedev/antd": "^5.7.0",
+    "@refinedev/cli": "^2.7.4",
+    "@refinedev/core": "^4.28.2",
+    "@refinedev/devtools": "^1.1.6",
+    "@refinedev/hasura": "^6.0.0",
+    "@refinedev/inferencer": "^4.3.2",
+    "@refinedev/kbar": "^1.1.2",
+    "@refinedev/nhost": "^4.1.5",
+    "@refinedev/react-router-v6": "^4.1.0",
+    "antd": "^5.0.5",
+    "gql-query-builder": "^3.8.0",
+    "graphql": "^15.6.1",
+    "graphql-request": "^5.2.0",
+    "graphql-ws": "^5.14.3",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.8.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^18.16.2",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "@vitejs/plugin-react": "^4.0.0",
+    "ahooks": "^3.7.8",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-turbo": "^1.10.12",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "eslint-plugin-prettier": "^5.1.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "lodash": "^4.17.21",
+    "prettier": "^3.1.1",
+    "typescript": "^4.7.4",
+    "utility-types": "^3.10.0",
+    "vite": "^4.3.1",
+    "vite-tsconfig-paths": "^4.2.2"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "refine dev",
+    "build": "tsc && refine build",
+    "preview": "refine start",
+    "refine": "refine"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "refine": {
+    "projectId": "KtuFKJ-4jJpqg-cYu72x"
+  }
+}
