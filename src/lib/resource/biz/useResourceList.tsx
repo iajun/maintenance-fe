@@ -1,22 +1,16 @@
-import { useResource } from './useResource'
-import { useMemo } from 'react'
-import { ColumnProps } from 'antd/es/table'
-import { ResourceItemType } from '@typings'
-import { UseInferFetchProps } from './types'
+import { UseInferFetchProps } from '../types'
 import { BaseRecord, HttpError, useList } from '@refinedev/core'
 import { useRelationQueries } from './useRelationQueries'
 import { BooleanField, DateField, EmailField, ImageField, NumberField, TextField, UrlField } from '@refinedev/antd'
 import { useMemoizedFn } from 'ahooks'
 import { FieldMetaInfo } from '@meta'
 
-export function useResourceTable<
+export function useResourceList<
   TQueryFnData extends BaseRecord = BaseRecord,
   TError extends HttpError = HttpError,
   TData extends BaseRecord = TQueryFnData,
 >(props: UseInferFetchProps<TQueryFnData, TError, TData>) {
   const { resource, ...listProps } = props
-
-  const { meta } = useResource(resource)
 
   const query = useList(listProps)
 
@@ -25,9 +19,8 @@ export function useResourceTable<
     initialData: query.data?.data,
   })
 
-  const renderCell = useMemoizedFn((meta: FieldMetaInfo, value: any) => {
+  const renderField = useMemoizedFn((meta: FieldMetaInfo, value: any) => {
     if (!value || value === null) return
-    console.log(relationQueries)
 
     if (meta.relation) {
       return <TextField {...{ value: relationQueries[meta.name]?.getDisplayName(value) }} />
@@ -57,21 +50,9 @@ export function useResourceTable<
     }
   })
 
-  const columns: ColumnProps<ResourceItemType>[] = useMemo(() => {
-    const columnMetas = meta.getMetas('column')
-    return columnMetas.map(
-      (meta): ColumnProps<ResourceItemType> => ({
-        dataIndex: meta.name,
-        key: meta.name,
-        title: meta.display_name,
-        render: (value) => renderCell(meta, value),
-      }),
-    )
-  }, [meta, renderCell])
-
   return {
-    columns,
     query,
     data: query.data,
+    renderField,
   }
 }

@@ -1,5 +1,5 @@
 import { CrudFilters, useList } from '@refinedev/core'
-import { RelationMetaFieldInfo, UseRelationQueryProps } from './types'
+import { RelationMetaFieldInfo, UseRelationQueryProps } from '../types'
 import { uniq } from 'lodash'
 import { useCallback, useMemo } from 'react'
 
@@ -27,7 +27,7 @@ export function useRelationQuery(props: UseRelationQueryProps & { meta: Relation
 
   if (isDict && fieldValue) {
     filters.push({
-      field,
+      field: isDict ? 'dict_key' : field,
       operator: 'eq',
       value: fieldValue,
     })
@@ -60,7 +60,7 @@ export function useRelationQuery(props: UseRelationQueryProps & { meta: Relation
     (value: string) => {
       if (meta.relation) {
         if (query.isFetching) return 'loading...'
-        return query.data?.data.find((item) => item[meta.relation?.field || 'id']?.toString() === value)?.[
+        return query.data?.data.find((item) => item[meta.relation?.field || 'id'] === value)?.[
           meta.relation.display_field
         ]
       }

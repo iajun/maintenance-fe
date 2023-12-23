@@ -3,9 +3,9 @@ import { Resource } from '@meta'
 import { FieldMetaInfo } from '@meta'
 import { useMemoizedFn } from 'ahooks'
 import { fromPairs } from 'lodash'
-import { useResource } from './useResource'
+import { useResource } from '../core/useResource'
 import { useRef } from 'react'
-import { RelationMetaFieldInfo } from './types'
+import { RelationMetaFieldInfo } from '../types'
 import { useRelationSelect } from './useRelationSelect'
 
 export function useRelationSelects(resource: Resource) {

@@ -9,15 +9,20 @@ export type ResourceTableProps = {
 export function ResourceTable(props: ResourceTableProps) {
   const { resource } = props
 
-  const { columns, data, query } = useResourceTable({
+  const {
+    columns,
+    rowKey,
+    queryCore: { isFetching: loading, data },
+  } = useResourceTable({
     resource,
   })
 
   return (
     <Table
       {...{
+        rowKey,
         dataSource: data?.data,
-        loading: query.isFetching,
+        loading,
         pagination: {
           total: data?.total,
         },

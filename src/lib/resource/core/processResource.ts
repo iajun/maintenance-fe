@@ -1,6 +1,6 @@
 import { FieldMetaInfo } from '@meta'
-import { FilterFn, InferType } from './types'
-import { Filters } from './config'
+import { FilterFn, InferType } from '../types'
+import { Filters } from '../config'
 
 export function processMetaFields(metas: FieldMetaInfo[]) {
   const findMeta = (nameOrFilterFn: FilterFn | string) => {

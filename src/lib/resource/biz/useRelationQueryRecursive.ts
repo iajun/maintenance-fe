@@ -1,6 +1,6 @@
 import { CrudFilters, useList } from '@refinedev/core'
-import { RelationMetaFieldInfo, UseRelationQueryProps } from './types'
-import { useResource } from './useResource'
+import { RelationMetaFieldInfo, UseRelationQueryProps } from '../types'
+import { useResource } from '../core/useResource'
 import { uniq, keyBy, merge } from 'lodash'
 
 export function useRelationQuery(

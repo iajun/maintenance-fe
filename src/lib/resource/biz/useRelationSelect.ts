@@ -1,5 +1,5 @@
 import { useSelect } from '@refinedev/core'
-import { RelationMetaFieldInfo } from './types'
+import { RelationMetaFieldInfo } from '../types'
 
 export function useRelationSelect(props: { meta: RelationMetaFieldInfo }) {
   const { meta } = props

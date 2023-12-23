@@ -1,7 +1,7 @@
 import { Resource } from '@meta'
 import { fromPairs } from 'lodash'
-import { useResource } from './useResource'
-import { RelationMetaFieldInfo } from './types'
+import { useResource } from '../core/useResource'
+import { RelationMetaFieldInfo } from '../types'
 import { useRelationQuery } from './useRelationQuery'
 import { useRef } from 'react'
 
